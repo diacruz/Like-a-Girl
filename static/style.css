@@ -1,0 +1,164 @@
+@font-face {
+    font-family: 'Billabong';
+    src: url('./fonts/Billabong/Billabong.ttf'); /* IE9 Compat Modes */
+}
+
+/* .bg{
+    position: absolute;
+    width: 100%;
+    opacity: 0.2;
+} */
+.nav-bars{
+    z-index: 1;
+    position: relative;
+}
+.navbar-header{
+    color:#fff !important;
+    font-family: Billabong;
+    font-size:65px;
+    width: 100%;
+    z-index: -1;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,1);
+    padding-top: 10px;
+}
+
+/* Wallpaper */
+.wallpaper{
+    background-image:url('../static/img/seamless_girl.jpg');
+    background-repeat:repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    color:rgb(0, 0, 0);
+    top:0;
+}
+.wallpaper:after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(247, 86, 107, 0.9) !important;
+    top: 0;
+    left: 0;
+}
+
+/* Card */
+.index .card{
+    padding: 40px !important;
+}
+.card{
+    border-radius: 50px;
+    width:100%;
+    height:400px;
+    background-color: rgba(247, 86, 107, 0.5);
+    border:0;
+    text-align: center;
+    display: block;
+    padding:10px; 
+    -webkit-box-shadow: 2px -1px 39px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 2px -1px 39px 0px rgba(0,0,0,0.48);
+    box-shadow: 2px -1px 39px 0px rgba(0,0,0,0.48);
+    margin-top: 10%;
+   
+}
+.card #left{
+    width: 50% !important;
+    float: left;
+    font-family: 'Raleway', sans-serif;
+    
+}
+.card #right{
+    width: 50% !important;    
+    float: left;
+    color:white;
+    padding: 0px 50px;
+}
+.card #right h1{
+    font-family: 'Raleway', sans-serif;
+}
+.card #right span{
+    font-family: 'Billabong', sans-serif;
+    font-size: 50px;
+     /* Rotate div */
+     -ms-transform: rotate(7deg); /* IE 9 */
+     -webkit-transform: rotate(7deg); /* Safari 3-8 */
+     transform: rotate(7deg);
+}
+.card #right p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+/* Login */
+.login{
+    width: 500px;   
+    margin: auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+.login img{
+    background-repeat: repeat !important;
+    width: 400px !important;
+    opacity: 0.2;
+}
+
+/* Register */
+.register{
+    width: 500px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    padding: 50px;
+    position: absolute;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50px;
+    margin-top:50px;
+    -webkit-box-shadow: 2px -1px 39px 0px rgba(0,0,0,0.48);
+    -moz-box-shadow: 2px -1px 39px 0px rgba(0,0,0,0.48);
+    box-shadow: 2px -1px 39px 0px rgba(0,0,0,0.48);
+}
+.register button{
+    border-radius: 50px;
+    background-color: transparent;
+    border:1px solid white;
+    color:white;
+}
+    
+@media only screen and (max-width:1200px){
+    .card{
+        height:500px;
+    }
+}
+@media only screen and (max-width:991px){
+    
+    .card #right p{
+        font-size: 15px;
+    }
+    .card{
+        height:450px;
+    }
+}
+@media only screen and (max-width:767px){
+    
+    .card #right h1{
+        font-size: 25px;
+    }
+    .card #right span{
+        font-size: 25px;
+    }
+    .card #right{
+        padding: 0 20px !important;
+    }
+    .card{
+        height:500px;
+    }
+}
+@media only screen and (max-width:480px){
+    
+    .card #right p{
+        display: none;
+    }
+}

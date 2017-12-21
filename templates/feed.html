@@ -1,0 +1,70 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='feed.css') }}" /> {% from "includes/_formhelpers.html" import render_field %} {% extends 'layout.html' %} {% block body %}
+<div class="wallpaper">
+    {% include 'includes/_messages.html'%}
+    <div class="feed ">
+        <div class="wallpaper">
+            <!-- <div class="topmenu"  style="position:fixed; width:100%;">
+              <div class="menuItem"><span class="fa fa-user fa-lg" style="color:white; padding-right:10px;"></span><a href="/profile">My Profile</a></div>
+              <div class="menuItem" style="float: right;"><span class="fa fa-power-off fa-lg" style="color:white; padding-right:10px;"></span><a href="/logout">Logout</a></div>
+              <div>
+                <header class="navbar-header">GitnJam</header>
+              </div>
+          </div> -->
+            <div class="card" id="newactivity">
+                <div class="cardcontainer">
+                    <h2 class="newsfeed-header">
+                        <b>Create a post
+                            <b>
+                    </h2>
+                    <form action="/feed" method="POST">
+                        <div class="form-group">
+                            {{render_field(form.title, placeholder="Project Title", class_="titletext")}}
+                        </div>
+                        <div class="form-group">
+                            {{render_field(form.body , placeholder="The next big thing...",class_="activitytext")}}
+                        </div>
+                        <button id="post-activity-btn" class="button btn-block btn-lg">Post</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card" id="newsfeed">
+                <div class="cardcontainer">
+                    <h2 class="newsfeed-header">
+                        <b>Feed</b>
+                    </h2>
+                    {% for post in posts %}
+                    <div class="card">
+                        <div class="cardcontainer">
+                            <table>
+                                <tr>
+                                    <td width=20%>
+                                        <a href="/profile/{{post['author']}}">
+                                            <img class="profilepic" src="{{users.find_one({'firstname' : post['author']})['pic']}}">
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <div>
+                                            <h5>
+                                                <b>{{post['author']}}</b> posted: <br><br> "{{post['title']}}"</h5>
+                                        </div>
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+
+                            </table>
+                            <hr>
+                            <p>{{post['body']}}</p>
+                            <a href="/like/{{post['title']}}">
+                                <i class="fa fa-heart 2x pull-right" style="color:red"> {{post['likes']}}</i>
+                            </a>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

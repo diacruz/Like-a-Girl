@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}" /> {% extends 'layout.html' %} {% from "includes/_formhelpers.html" import render_field %} {% block body %} {% include 'includes/_messages.html'%}
+<div class="profile">
+
+
+    <div class="wallpaper"></div>
+    <div class="profilediv">
+        <div class="profiletable" style="display:flex; justify-content: center;">
+            <div class="" id="newsfeed2">
+                <div class="cardcontainer">
+                    {% for post in posts_by_user %}
+                    <div class="card">
+                        <div class="cardcontainer">
+                            <table>
+                                <tr>
+                                    <h4 style="color:black" align="center">{{post['author']}} posted:
+                                        <br> "{{post['title']}}"</h4>
+                                    <!-- <p style="color:black">{{post['likes']}}</p> -->
+
+                                </tr>
+                            </table>
+                            <hr>
+                            <p style="color:#000">{{post['body']}}</p>
+                            <span class="time">{{post['time']}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <table width="100%">
+        <tr>
+
+        </tr>
+    </table>
+</div>
+</div>
+
+{% endblock %}

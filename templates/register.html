@@ -1,0 +1,30 @@
+{% extends 'layout.html' %} 
+{% from "includes/_formhelpers.html" import render_field %} 
+{% block body %} 
+{% include 'includes/_messages.html'%}
+<div class="wallpaper">
+
+</div>
+<div class="register">
+    <form action="/register" method="POST">
+        <div class="form-group">
+            {{render_field(form.firstname, class_="form-control", placeholder="First Name")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.lastname, class_="form-control", placeholder="Last Name")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.email, class_="form-control", placeholder="Email")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.password, class_="form-control", placeholder="Password")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.confirm_password, class_="form-control", placeholder="Confirm Password")}}
+        </div>
+        <button class="btn btn-block btn-lg">Register</button>
+        <p align="center"class="text-white">Click <a href="/" style="text-decoration:none !important; color:white;"><b><u>here</u>    </b></a> to login</p>
+    </form>
+</div>
+{% endblock %}
+

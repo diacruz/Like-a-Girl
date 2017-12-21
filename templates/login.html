@@ -1,0 +1,19 @@
+{% extends 'layout.html' %} 
+{% from "includes/_formhelpers.html" import render_field %} 
+{% block body %} 
+{% include 'includes/_messages.html'%}
+<div class="wallpaper">
+
+</div>
+<div class="login">
+    <form action="/login" method="POST">
+        <div class="form-group">
+            {{render_field(form.email, class_="form-control", placeholder="Email")}}
+        </div>
+        <div class="form-group">
+            {{render_field(form.password, class_="form-control", placeholder="Password")}}
+        </div>
+        <button class="btn btn-block btn-lg">Login</button>
+    </form>
+    </div>
+{% endblock %}

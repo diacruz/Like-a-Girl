@@ -1,0 +1,21 @@
+<div class="nav-bars">
+    <div class="container">
+        {% if session.is_logged_in %}
+        <div class="menuItem">
+            <span class="fa fa-user fa-lg" style="color:white; padding-right:10px;"></span>
+            <a href="/profile">My Profile</a>
+        </div>
+        <div class="menuItem">
+                <span class="fa fa-rss fa-lg" style="color:white; padding-right:10px;"></span>
+                <a href="/feed">Feed</a>
+            </div>
+        <div class="menuItem" style="float: right;">
+            <span class="fa fa-power-off fa-lg" style="color:white; padding-right:10px;"></span>
+            <a href="/logout">Logout</a>
+        </div>
+        {% endif %}
+        <a href="/feed" style="text-decoration:none">
+            <h3 class="navbar-header">Like a girl</h3>
+        </a>
+    </div>
+</div>

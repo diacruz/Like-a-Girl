@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" /> 
+{% from "includes/_formhelpers.html" import render_field %} 
+{% extends 'layout.html' %} 
+{% block body %}
+<div class="wallpaper"></div>
+<div class="index">  
+    <div class="container">
+{% include 'includes/_messages.html'%}            
+        <div class="card">
+            <div id="left">
+                    <h2 class="text-white">Login</h2>
+                    <form action="/login" method="POST">
+                        <div class="form-group">
+                            {{render_field(form.email, class_="form-control", placeholder="Email")}}
+                        </div>
+                        <div class="form-group">
+                            {{render_field(form.password, class_="form-control", placeholder="Password")}}
+                        </div>
+                        <button class="btn btn-block btn-lg">Login</button>
+                    </form>
+                <p class="text-white">Click <a href="/register" style="text-decoration:none !important; color:white;"><b><u>here</u>    </b></a> to register</p>
+            </div>
+            <div id="right">
+                <h1 class=""><b>Welcome to </b><span>Like a girl</span></h1><p>The forum dedicated to moms, moms-to-be and those who want to be a mom. To participate in the discussions, please register, the registration is completely free and takes only on a second  to connect with other moms and moms-to-be and share stories about pregnancy, giving birth, trying to conceive and more on</p>
+            </div>
+        </div>    
+    </div>
+
+</div>
+{% endblock %}
